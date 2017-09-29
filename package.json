@@ -6,6 +6,8 @@
     "bootstrap": "^3.3.7",
     "husky": "^0.14.3",
     "lint-staged": "^4.2.3",
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.1.1",
     "prettier": "^1.7.2",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
@@ -19,15 +21,20 @@
     ]
   },
   "scripts": {
-    "precommit": "lint-staged",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "pre-commit": "lint-staged",
+    "eject": "react-scripts eject",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start-js": "react-scripts start",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build"
   },
   "_Package-Notes": {
+    "npm-run-all": "This allows us to run two scripts in parallel",
     "husky": "makes it easy to use githooks as if they are npm scripts.",
     "lint-staged": "allows us to run scripts on staged files in git.",
-    "prettier": "Automatically format JavaScript before commits."
+    "prettier": "Automatically format JavaScript before commits.",
+    "node-sass-chokidar": "At the time of compiling this project there were performance issues with node-sass which node-sass-chokidar resolves"
   }
 }

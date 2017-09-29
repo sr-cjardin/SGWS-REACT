@@ -5,7 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 // Import Bootstrap Frontend Library
 import 'bootstrap/dist/css/bootstrap.css';
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+// import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 
 // Global CSS
 import './index.css';
