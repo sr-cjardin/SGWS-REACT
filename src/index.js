@@ -7,7 +7,6 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
 
 // Import Bootstrap Frontend Library
-import 'bootstrap/dist/css/bootstrap.css';
 import './Styles/css/index.css';
 
 render((

@@ -1,8 +1,9 @@
 import React from 'react';
+import Title from '../Components/Title/Title';
 
 const Portfolio = () => (
   <div>
-    <p>Portfolio Content</p>
+      <Title primary className="text-center">Portfolio</Title>
   </div>
 );
 

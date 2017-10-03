@@ -3,9 +3,7 @@ import Title from '../Components/Title/Title';
 
 const Home = () => (
   <div>
-    <p>Homepage Content</p>
-    <Title primary>Hello World</Title>
-    <Title>Hello World</Title>
+    <Title primary className="text-center">Homepage</Title>
   </div>
 );
 
