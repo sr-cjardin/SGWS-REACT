@@ -1,14 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { render } from 'react-dom';
+import { App } from './App';
 import registerServiceWorker from './registerServiceWorker';
+
+// React Router Dependencies
+import { BrowserRouter } from 'react-router-dom';
 
 // Import Bootstrap Frontend Library
 import 'bootstrap/dist/css/bootstrap.css';
-// import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+import './Styles/css/index.css';
 
-// Global CSS
-import './index.css';
+render((
+    <BrowserRouter>
+        <App {...this.props} />
+    </BrowserRouter>
+), document.getElementById('root'));
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// In production, register a service worker to serve assets from local cache.
 registerServiceWorker();

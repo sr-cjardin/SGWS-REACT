@@ -12,6 +12,7 @@
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
     "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "^1.0.14"
   },
   "lint-staged": {
@@ -21,14 +22,13 @@
     ]
   },
   "scripts": {
-    "pre-commit": "lint-staged",
-    "eject": "react-scripts eject",
-    "test": "react-scripts test --env=jsdom",
-    "start-js": "react-scripts start",
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build"
+    "pre-commit"           : "lint-staged",
+    "eject"                : "react-scripts eject",
+    "test"                 : "react-scripts test --env=jsdom",
+    "start-js"             : "react-scripts start",
+    "start"           : "npm-run-all -p watch-css start-js",
+    "build-css"       : "node-sass-chokidar --include-path ./src src/Styles/scss/*.scss -o src/Styles/css --watch --recursive",
+    "watch-css"       : "npm run build-css && node-sass-chokidar ./src/Components/**/*.scss --watch --recursive"
   },
   "_Package-Notes": {
     "npm-run-all": "This allows us to run two scripts in parallel",
